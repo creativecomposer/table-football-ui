@@ -1,3 +1,7 @@
+# The table football scores tracker
+
+A Single Page Application to store and display table football scores so the people who is the champion!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

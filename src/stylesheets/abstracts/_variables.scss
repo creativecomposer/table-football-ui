@@ -3,9 +3,12 @@
 // -----------------------------------------------------------------------------
 
 // colors
-$lightGrey1: #EEE;
-$lightGrey2: #DDD;
-$lightGrey3: #CCC;
+$primaryColor: #3f5865;
+$brightGreen: #35ff4d;
+$pinkRed: #ff3079;
+$lightBlue: #62b4ff;
+$lightGrey: #bbbbc9;
+$whiteColor: #fff;
 
 // Screen sizes
 
@@ -14,14 +17,14 @@ $grid-breakpoints: (
   sm: 640px,
   md: 768px,
   lg: 992px,
-  xl: 1320px
+  xl: 1320px,
 );
 
 $container-max-widths: (
   sm: 604px,
   md: 720px,
   lg: 960px,
-  xl: 1260px
+  xl: 1260px,
 );
 
 // Z-index values as per https://confluence.verivox.ads/display/TUX/Z-Index+Definition
