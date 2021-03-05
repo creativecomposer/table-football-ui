@@ -1,0 +1,75 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2020": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "rules": {
+        "import/prefer-default-export": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+        "react/destructuring-assignment": [1, "always", { "ignoreClassFields": true }],
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": ["error"],
+        "comma-dangle": "off",
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": ["error"],
+        "class-methods-use-this": "warn",
+        // The jsx-a11y/control-has-associated-label and jsx-a11y/label-has-associated-control rules are added because
+        // airbnb requires the control should be inside the label and have htmlFor. But we want only one to be there and not both.
+        // More info: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/566
+        "jsx-a11y/control-has-associated-label": ["off", {
+          "labelComponents": [],
+          "labelAttributes": [],
+          "controlComponents": [],
+          "assert": "both",
+          "depth": 25
+        }],
+        "react/sort-comp": [1, {
+            "order": [
+              "instance-variables",
+              "lifecycle",
+              "/^on.+$/",
+              "everything-else",
+              "render"
+            ]
+}]
+    },
+    "overrides": [
+        {
+            "files": "*.tsx",
+            "rules": {
+                "react/prefer-stateless-function": "off"
+            }
+        }
+    ],
+    "globals": {
+        "HeadersInit": "readonly"
+    }
+}
