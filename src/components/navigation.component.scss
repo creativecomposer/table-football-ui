@@ -1,0 +1,24 @@
+@import 'stylesheets/abstracts/variables';
+
+.nav__list {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__link {
+  background-color: $pinkRed;
+  border-right: 1px solid $primaryColor;
+  padding: 5px;
+
+  &:hover {
+    background-color: lighten($pinkRed, 20%);
+    font-weight: bold;
+  }
+
+  &--active {
+    background-color: darken($pinkRed, 25%);
+    pointer-events: none;
+    user-select: none;
+  }
+}
