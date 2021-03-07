@@ -1,6 +1,7 @@
 import React from 'react';
-import { HashRouter, Link } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { AppRoutes } from './Route';
+import { Navigation } from 'components/navigation.component';
 import './App.scss';
 
 function App() {
@@ -10,22 +11,7 @@ function App() {
         <p>The Table Football Score Tracker</p>
       </header>
       <HashRouter>
-        <nav>
-          <ul className="nav-list">
-            <li className="nav-link">
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            <li className="nav-link">
-              <Link to="/games">Games</Link>
-            </li>
-            <li className="nav-link">
-              <Link to="/players">Players</Link>
-            </li>
-            <li className="nav-link">
-              <Link to="/teams">Teams</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
         <main role="main">
           <AppRoutes />
         </main>

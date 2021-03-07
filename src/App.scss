@@ -7,16 +7,5 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #fff;
-}
-
-.nav-list {
-  align-items: center;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.nav-link {
-  background-color: $pinkRed;
-  padding: 5px;
+  color: $whiteColor;
 }
