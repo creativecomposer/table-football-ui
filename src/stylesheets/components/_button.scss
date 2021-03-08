@@ -2,3 +2,12 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
+.button {
+  height: $formControlHeight;
+
+  &--primary {
+    background-color: $pinkRed;
+    color: $whiteColor;
+    font-weight: bold;
+  }
+}
