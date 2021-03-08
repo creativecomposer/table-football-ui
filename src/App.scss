@@ -1,11 +1,19 @@
 @import 'stylesheets/abstracts/variables';
 
 .App-header {
+  align-items: center;
   background-color: #282c34;
+  color: $whiteColor;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: $whiteColor;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 2;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }

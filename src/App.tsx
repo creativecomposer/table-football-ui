@@ -12,7 +12,7 @@ function App() {
       </header>
       <HashRouter>
         <Navigation />
-        <main role="main">
+        <main role="main" className="main">
           <AppRoutes />
         </main>
       </HashRouter>
