@@ -1,0 +1,39 @@
+@import 'stylesheets/abstracts/variables';
+
+@mixin fieldset-team {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-evenly;
+}
+
+.start-game {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'description'
+    'team1'
+    'team2'
+    'cta';
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__team1 {
+    @include fieldset-team;
+
+    grid-area: team1;
+  }
+
+  &__team2 {
+    @include fieldset-team;
+
+    grid-area: team2;
+  }
+
+  &__cta {
+    grid-area: cta;
+  }
+}
