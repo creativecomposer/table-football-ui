@@ -1,0 +1,39 @@
+@import 'stylesheets/abstracts/variables';
+
+@mixin team-fieldset {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-around;
+}
+
+.gameplay {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'title title'
+    'team1 team2'
+    'cta cta';
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__team1 {
+    grid-area: team1;
+    @include team-fieldset;
+  }
+
+  &__team2 {
+    grid-area: team2;
+    @include team-fieldset;
+  }
+
+  &__cta {
+    align-items: center;
+    display: flex;
+    grid-area: cta;
+    justify-content: space-evenly;
+  }
+}
