@@ -4,17 +4,27 @@ A Single Page Application to store and display table football scores so the peop
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to run this project
+
+### Note
+
+The below steps are verified to work in a Linux system with Node version 14.15.4.
+
+The below steps are not verified on Windows.
+
+Therefore, it is recommended to use a Linux or Mac system to run this project.
+
+1. Check out the repo.
+
+2. Run `yarn` command to install the dependencies.
+
+3. Run the command `yarn start` to start the development server at port 3000.
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Other available Scripts
 
 In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
 ### `yarn test`
 
