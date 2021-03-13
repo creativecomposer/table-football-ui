@@ -1,0 +1,65 @@
+@import 'stylesheets/abstracts/variables';
+
+.selector {
+  &__popup {
+    align-items: center;
+    background-color: rgba($brightGreen, 0.6);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.3s;
+    visibility: hidden;
+    width: 100vw;
+
+    &--show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__new-item {
+    background-color: $whiteColor;
+    border-radius: 5px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'title title'
+      'name name'
+      'error-msg error-msg'
+      'cta-primary cta-secondary';
+    padding: 10px;
+  }
+
+  &__new-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    grid-area: title;
+    user-select: none;
+  }
+
+  &__new-item-name {
+    grid-area: name;
+  }
+
+  &__error-message {
+    color: $pinkRed;
+    grid-area: error-msg;
+  }
+
+  &__create-new {
+    grid-area: cta-primary;
+  }
+
+  &__cancel {
+    grid-area: cta-secondary;
+  }
+
+  &__margin {
+    margin-left: 5px;
+  }
+}
