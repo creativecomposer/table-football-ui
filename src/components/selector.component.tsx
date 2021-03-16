@@ -69,6 +69,7 @@ export const Selector: FunctionComponent<SelectorProps> = (props: SelectorProps)
         <label>
           {label}
           <select className="select selector__margin" onChange={onValueChange} value={value}>
+            <option value="">--Please choose an option--</option>
             {options.map((option: string) => (
               <option key={option} value={option}>
                 {option}
@@ -91,7 +92,7 @@ export const Selector: FunctionComponent<SelectorProps> = (props: SelectorProps)
               onChange={onNameChange}
             />
           </label>
-          {errorMessage !== '' && <p className="selector__error-message">{errorMessage}</p>}
+          {errorMessage !== '' && <p className="error selector__error-message">{errorMessage}</p>}
           <button type="button" className="button button--primary selector__create-new" onClick={createNewItem}>
             Create
           </button>
