@@ -1,0 +1,52 @@
+@import 'stylesheets/abstracts/variables';
+
+.table {
+  border: 2px solid $blackColor;
+
+  &__caption {
+    background-color: $lightGrey;
+    color: $primaryColor;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  &__th {
+    background-color: $lightGrey;
+    border: 1px solid $primaryColor;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: sticky;
+    top: -2px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  }
+
+  &__row:nth-of-type(even) {
+    background-color: rgba($brightGreen, 0.4);
+  }
+
+  &__cell {
+    border: 1px solid $lightGrey;
+  }
+
+  &__th,
+  &__cell {
+    padding: 5px;
+  }
+}
+
+.nostats {
+  align-items: center;
+  background-color: $pinkRed;
+  border-radius: 5px;
+  color: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  padding: 10px;
+
+  &__msg {
+    font-size: 1.2rem;
+  }
+}
