@@ -4,10 +4,11 @@ import './dashboard.component.scss';
 import { GenericKeyValuePair } from 'definitions';
 import { usePlayers } from 'state-management/use-players.hook';
 import { PlayerModel } from 'models/player.model';
+import { getWinRatio } from 'business-logic/score-calculation';
 
 const sortWinRatioDsc = (a: PlayerModel, b: PlayerModel) => {
-  const aRatio = a.gamesPlayed / a.wins;
-  const bRatio = b.gamesPlayed / b.wins;
+  const aRatio = getWinRatio(a.gamesPlayed, a.wins);
+  const bRatio = getWinRatio(b.gamesPlayed, b.wins);
   if (aRatio > bRatio) {
     return -1;
   }
@@ -21,20 +22,19 @@ export function Dashboard() {
   const objPlayers: GenericKeyValuePair = usePlayers();
 
   const getPlayerRows = () => {
-    return Object.values(objPlayers)
-      .sort(sortWinRatioDsc)
-      .map((player: PlayerModel) => (
-        <tr className="table__row" key={player.name}>
-          <td className="table__cell">{player.name}</td>
-          <td className="table__cell">{player.gamesPlayed}</td>
-          <td className="table__cell">{player.wins}</td>
-          <td className="table__cell">{player.losses}</td>
-          <td className="table__cell">{player.wins === 0 ? 0 : player.gamesPlayed / player.wins}</td>
-          <td className="table__cell">{player.goalsFor}</td>
-          <td className="table__cell">{player.goalsAgainst}</td>
-          <td className="table__cell">{player.goalsFor - player.goalsAgainst}</td>
-        </tr>
-      ));
+    const sortedPlayers = Object.values(objPlayers).sort(sortWinRatioDsc);
+    return sortedPlayers.map((player: PlayerModel) => (
+      <tr className="table__row" key={player.name}>
+        <td className="table__cell">{player.name}</td>
+        <td className="table__cell">{player.gamesPlayed}</td>
+        <td className="table__cell">{player.wins}</td>
+        <td className="table__cell">{player.losses}</td>
+        <td className="table__cell">{getWinRatio(player.gamesPlayed, player.wins)}</td>
+        <td className="table__cell">{player.goalsFor}</td>
+        <td className="table__cell">{player.goalsAgainst}</td>
+        <td className="table__cell">{player.goalsFor - player.goalsAgainst}</td>
+      </tr>
+    ));
   };
 
   return (

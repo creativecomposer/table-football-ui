@@ -6,8 +6,8 @@ import { GameModel } from 'models/game.model';
 import { TeamModel } from 'models/team.model';
 import { PlayerModel } from 'models/player.model';
 import { GenericKeyValuePair, ReducerAction } from 'definitions';
-import { addPlayer } from 'state-management/actions';
-import { usePlayers } from 'state-management/use-players.hook';
+import { addPlayer, addTeam } from 'state-management/actions';
+import { usePlayers, useTeams } from 'state-management/use-players.hook';
 
 type CreateGameProps = {
   onGameStarted: (game: GameModel) => void;
@@ -56,16 +56,14 @@ const playerReducer = (state: PlayerModel, action: ReducerAction) => {
   }
 };
 
-const initialTeams = ['Real Madrid', 'FC Bayern', 'Hertha BSC'];
-
 export const CreateGame: FunctionComponent<CreateGameProps> = (props: CreateGameProps) => {
   const { onGameStarted } = props;
   const [state, updateGame] = useReducer(gameReducer, new GameModel());
-  const [teams, setTeams] = useState(initialTeams);
   const [errorMessage, setErrorMessage] = useState('');
   const reduxDispatch = useDispatch();
   const objPlayers: GenericKeyValuePair = usePlayers();
   const players: string[] = Object.keys(objPlayers);
+  const teams = Object.keys(useTeams());
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -93,7 +91,8 @@ export const CreateGame: FunctionComponent<CreateGameProps> = (props: CreateGame
   };
 
   const onNewTeam = (name: string, value: string) => {
-    setTeams([...teams, value]);
+    const newTeam = new TeamModel(value);
+    reduxDispatch(addTeam(newTeam));
     onItemChange(name, value);
   };
 
