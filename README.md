@@ -1,6 +1,8 @@
 # The table football scores tracker
 
-A Single Page Application to store and display table football scores so the people who is the champion!
+A Single Page Application to store and display table football scores so the people know who is the champion!
+
+You can start a game, record goals, and view the player statistics.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -11,6 +13,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The below steps are verified to work in a Linux system with Node version 14.15.4.
 
 The below steps are not verified on Windows.
+
+Browsers tested: Google chrome, Firefox
 
 Therefore, it is recommended to use a Linux or Mac system to run this project.
 
