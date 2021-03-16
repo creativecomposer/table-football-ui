@@ -1,11 +1,17 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { Dashboard } from 'components/dashboard.component';
 import { Games } from 'components/games.component';
 import { Players } from 'components/players.component';
 import { Teams } from 'components/teams.component';
 
 export function AppRoutes() {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.title = `Table Football Scores Tracker | ${location.pathname.replace('/', '')}`;
+  }, [location]);
+
   return (
     <Switch>
       <Route path="/dashboard">
