@@ -2,11 +2,13 @@ import { Dispatch } from 'redux';
 import { ReducerAction } from 'definitions';
 import { GameModel } from 'models/game.model';
 import { PlayerModel } from 'models/player.model';
+import { TeamModel } from 'models/team.model';
 
 export enum ActionTypes {
   ADD_GAME = 'ADD_GAME',
   ADD_PLAYER = 'ADD_PLAYER',
   UPDATE_PLAYER = 'UPDATE_PLAYER',
+  ADD_TEAM = 'ADD_TEAM',
 }
 
 export const addGame = (dispatch: Dispatch, game: GameModel): void => {
@@ -27,3 +29,5 @@ export const updatePlayer = (player: PlayerModel): ReducerAction => ({
   type: ActionTypes.UPDATE_PLAYER,
   payload: player,
 });
+
+export const addTeam = (team: TeamModel): ReducerAction => ({ type: ActionTypes.ADD_TEAM, payload: team });

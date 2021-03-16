@@ -27,4 +27,5 @@ export type ReduxPropsType = {
 export type RootState = {
   games: any;
   players: GenericKeyValuePair;
+  teams: GenericKeyValuePair;
 };
