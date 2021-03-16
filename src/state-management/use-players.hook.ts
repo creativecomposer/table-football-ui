@@ -7,3 +7,8 @@ export const usePlayers = (): GenericKeyValuePair => {
   ) as GenericKeyValuePair;
   return objPlayers;
 };
+
+export const useTeams = (): GenericKeyValuePair => {
+  const objTeams: GenericKeyValuePair = useSelector<RootState>((reduxState) => reduxState.teams) as GenericKeyValuePair;
+  return objTeams;
+};
