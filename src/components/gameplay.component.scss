@@ -14,7 +14,8 @@
   grid-template-areas:
     'title title'
     'team1 team2'
-    'cta cta';
+    'cta cta'
+    'help help';
 
   &__title {
     grid-area: title;
@@ -35,5 +36,14 @@
     display: flex;
     grid-area: cta;
     justify-content: space-evenly;
+  }
+
+  &__help {
+    grid-area: help;
+  }
+
+  &__goal {
+    margin-left: 5px;
+    width: 50px;
   }
 }
