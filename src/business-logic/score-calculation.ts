@@ -3,6 +3,8 @@ import { TeamModel } from 'models/team.model';
 import { PlayerModel } from 'models/player.model';
 import { ScoreModel, TeamScore } from 'models/score.model';
 
+export const getWinRatio = (gamesPlayed: number, wins: number) => (wins === 0 ? 0 : wins / gamesPlayed);
+
 export const getUpdatedPlayerStats = (currentStats: PlayerModel, statsToAdd: PlayerModel) => {
   return new PlayerModel(
     currentStats.name,
