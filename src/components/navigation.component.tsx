@@ -26,11 +26,6 @@ export function Navigation() {
             Players
           </Link>
         </li>
-        <li>
-          <Link className={'nav__link' + (location.pathname === '/teams' ? ' nav__link--active' : '')} to="/teams">
-            Teams
-          </Link>
-        </li>
       </ul>
     </nav>
   );
