@@ -5,8 +5,6 @@ import './navigation.component.scss';
 export function Navigation() {
   let location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <nav className="nav">
       <ul className="nav__list">
@@ -20,7 +18,7 @@ export function Navigation() {
         </li>
         <li>
           <Link className={'nav__link' + (location.pathname === '/games' ? ' nav__link--active' : '')} to="/games">
-            Games
+            Start Game
           </Link>
         </li>
         <li>
