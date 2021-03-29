@@ -6,6 +6,12 @@ You can start a game, record goals, and view the player statistics.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependencies
+
+The back-end service should run in the localhost at port 8080.
+
+Clone the [back-end repo](https://github.com/antony2025/table-football-backend) and run it before starting this app.
+
 ## How to run this project
 
 ### Note
