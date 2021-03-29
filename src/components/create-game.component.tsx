@@ -16,7 +16,7 @@ type CreateGameProps = {
 const gameReducer = (state: GameModel, action: ReducerAction): GameModel => {
   switch (action.type) {
     case 'description':
-      return { ...state, description: action.payload };
+      return { ...state, name: action.payload };
     case 'team1':
       return { ...state, team1: teamReducer(state.team1, { type: 'name', payload: action.payload }) };
     case 'team1Player1':
@@ -68,7 +68,7 @@ export const CreateGame: FunctionComponent<CreateGameProps> = (props: CreateGame
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     if (
-      state.description === '' ||
+      state.name === '' ||
       state.team1.name === '' ||
       state.team2.name === '' ||
       state.team1.player1.name === '' ||
@@ -98,21 +98,22 @@ export const CreateGame: FunctionComponent<CreateGameProps> = (props: CreateGame
 
   const onNewPlayer = (name: string, value: string) => {
     const newPlayer = new PlayerModel(value);
-    reduxDispatch(addPlayer(newPlayer));
+    addPlayer(reduxDispatch, newPlayer);
     onItemChange(name, value);
   };
 
   return (
     <form className="start-game" onSubmit={handleSubmit}>
       <label className="start-game__description">
-        Game description
+        Game Name
         <input
           type="text"
           className="edit"
           minLength={1}
           maxLength={20}
           name="description"
-          value={state.description}
+          required
+          value={state.name}
           onChange={onDescriptionChange}
         />
       </label>

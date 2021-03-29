@@ -2,7 +2,7 @@ import { TeamModel } from 'models/team.model';
 
 export class GameModel {
   constructor(
-    public description: string = '',
+    public name: string = '',
     public team1: TeamModel = new TeamModel(),
     public team2: TeamModel = new TeamModel(),
     public startTime: Date | undefined = undefined,
