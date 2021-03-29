@@ -15,7 +15,13 @@ export enum ActionTypes {
 }
 
 export const addGame = (dispatch: Dispatch, game: GameModel): void => {
-  dispatch({ type: ActionTypes.ADD_GAME, payload: game });
+  doRequest('http://localhost:8080/game', 'POST', game).then(
+    (data) => {
+      console.log('Game added', data);
+      dispatch({ type: ActionTypes.ADD_GAME, payload: game });
+    },
+    (error) => console.error('Game add failed', error)
+  );
   dispatch(updatePlayer(game.team1.player1));
   dispatch(updatePlayer(game.team2.player1));
   if (game.team1.player2.name !== '') {
@@ -28,10 +34,12 @@ export const addGame = (dispatch: Dispatch, game: GameModel): void => {
 
 export const addPlayer = (dispatch: Dispatch, player: PlayerModel): void => {
   doRequest('http://localhost:8080/players', 'POST', player).then(
-    (data) => console.log('Player added', data),
+    (data) => {
+      console.log('Player added', data);
+      dispatch({ type: ActionTypes.ADD_PLAYER, payload: player });
+    },
     (error) => console.error('Player add failed', error)
   );
-  dispatch({ type: ActionTypes.ADD_PLAYER, payload: player });
 };
 
 export const loadPlayers = (players: PlayerModel[]): ReducerAction => ({
